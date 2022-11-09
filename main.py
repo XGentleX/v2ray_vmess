@@ -6,8 +6,12 @@ vmess_array = set(())
 
 
 def get_vmess():
-    for c in cfmem.get_ssr():
-        vmess_array.add(c)
+    # noinspection PyBroadException
+    try:
+        for c in cfmem.get_ssr():
+            vmess_array.add(c)
+    except Exception as e:
+        print()
 
 
 if __name__ == '__main__':
