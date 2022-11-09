@@ -19,7 +19,7 @@ def parse_result():
     return items[0].getElementsByTagName('link')[0].childNodes[0].nodeValue
 
 
-def get_ssr():
+def get():
     link = parse_result()
     html = requests.get(link).text
     parse_html = BeautifulSoup(html, "html.parser")
