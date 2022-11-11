@@ -1,15 +1,15 @@
-
+import base64
 from xml.dom.minidom import parseString
 
 import requests as requests
 from bs4 import BeautifulSoup
 
 ok_code = [200, 201, 202, 203, 204, 205, 206]
-url = "https://www.cfmem.com/feeds/posts/default?alt=rss"
+url = "aHR0cHM6Ly93d3cuY2ZtZW0uY29tL2ZlZWRzL3Bvc3RzL2RlZmF1bHQ/YWx0PXJzcw=="
 
 
 def get_last():
-    resout = requests.get(url)
+    resout = requests.get(base64.b64decode(url).decode('utf-8'))
     return resout.text
 
 
