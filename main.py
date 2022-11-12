@@ -1,6 +1,6 @@
 import base64
 
-from modules import a, b
+from modules import a, b, c
 
 vmess_array = set(())
 
@@ -8,13 +8,18 @@ vmess_array = set(())
 # noinspection PyBroadException
 def get():
     try:
-        for c in a.get():
-            vmess_array.add(c)
+        for link in a.get():
+            vmess_array.add(link)
     except Exception as e:
         print()
     try:
-        for c in b.get():
-            vmess_array.add(c)
+        for link in b.get():
+            vmess_array.add(link)
+    except Exception as e:
+        print()
+    try:
+        for link in c.get():
+            vmess_array.add(link)
     except Exception as e:
         print()
 
