@@ -8,12 +8,12 @@ vmess_array = set(())
 # noinspection PyBroadException
 def get():
     try:
-        for c in cfmem.get():
+        for c in a.get():
             vmess_array.add(c)
     except Exception as e:
         print()
     try:
-        for c in xtrojan.get():
+        for c in b.get():
             vmess_array.add(c)
     except Exception as e:
         print()
