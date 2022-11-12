@@ -1,6 +1,6 @@
 import base64
 
-from modules import cfmem, xtrojan
+from modules import a, b
 
 vmess_array = set(())
 
