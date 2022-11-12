@@ -47,3 +47,5 @@ def get():
                             continue
                         if segmentation_array[0] in schemes_allow:
                             links.add(a)
+
+    return links
