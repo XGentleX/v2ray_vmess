@@ -1,6 +1,7 @@
 import base64
 
 from modules import a, b, c
+from util import vmess
 
 vmess_array = set(())
 schemes_allow = ['vmess', 'ss', 'socks', 'ssr', 'trojan']
@@ -33,6 +34,11 @@ if __name__ == '__main__':
         if segmentation_array.__len__() <= 0:
             continue
         if segmentation_array[0] in schemes_allow:
+            config = vmess.parse(link)
+            add = config.get('add')
+            port = config.get('port')
+            if (not add) or (not port):
+                continue
             link_array.add(link)
     encode = base64.b64encode('\r\n'.join(link_array).encode("utf-8")).decode('utf-8')
     v = open('v', 'w', encoding='UTF-8')

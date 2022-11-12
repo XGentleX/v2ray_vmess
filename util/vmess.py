@@ -2,5 +2,9 @@ import base64
 import json
 
 
-def parse(vmess):
-    return json.loads(base64.b64decode(vmess.split('//')[1]).decode('utf-8'))
+# noinspection PyBroadException
+def parse(link):
+    try:
+        return json.loads(base64.b64decode(link.split('//')[1]).decode('utf-8'))
+    except Exception as e:
+        return {}
